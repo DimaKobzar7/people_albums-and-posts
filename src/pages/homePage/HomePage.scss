@@ -1,0 +1,79 @@
+@import "../../styles/mixins";
+
+.home-page {
+  height: 100%;
+  padding: 30px 0;
+
+  background: linear-gradient(
+      rgba(135, 60, 255, 0.4),
+      rgba(135, 60, 255, 0) 80%
+    ),
+    linear-gradient(
+      -45deg,
+      rgba(120, 155, 255, 0.9) 25%,
+      rgba(255, 160, 65, 0.9) 75%
+    );
+
+  @include tablet {
+    padding: 16px 0;
+  }
+
+  @include small-mobile {
+    padding: 12px 0;
+  }
+
+  &__wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 0 30px;
+
+    height: calc(100vh - 200px);
+    overflow: scroll;
+    overflow-x: hidden;
+
+    @include tablet {
+      height: calc(100vh - 270px);
+    }
+
+    @include small-mobile {
+      padding: 0 15px;
+      gap: 12px;
+      height: calc(100svh - 210px);
+    }
+
+    &:hover::-webkit-scrollbar-thumb {
+      background-color: white;
+    }
+
+    &::-webkit-scrollbar {
+      width: 10px;
+      background: transparent;
+    }
+
+    &::-webkit-scrollbar-track {
+      background: transparent;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-clip: content-box;
+      border-radius: 6px;
+      border: solid 3px transparent;
+    }
+  }
+
+  &__title {
+    text-align: center;
+    margin-bottom: 16px;
+    color: white;
+    font-size: 55px;
+
+    @include tablet {
+      font-size: 45px;
+    }
+
+    @include small-mobile {
+      font-size: 25px;
+    }
+  }
+}

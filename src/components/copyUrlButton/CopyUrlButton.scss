@@ -1,0 +1,64 @@
+@import "../../styles/mixins";
+
+.copy-url-button {
+  position: relative;
+  appearance: none;
+  border: none;
+  background: none;
+
+  display: flex;
+  justify-content: center;
+
+  padding: 16px;
+  width: 160px;
+  text-decoration: none;
+  font-size: 16px;
+  color: black;
+  background-color: white;
+  border-radius: 16px;
+  transition: background-color 0.3s, color 0.3s;
+
+  cursor: pointer;
+
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+
+  @include small-mobile {
+    padding: 12px;
+    width: 100%;
+  }
+
+  &__label {
+    background: linear-gradient(
+        0deg,
+        rgba(29, 29, 27, 0.8),
+        rgba(29, 29, 27, 0.8)
+      ),
+      #fff;
+    border-radius: 4px;
+    color: #fff;
+    font-size: 12px;
+    font-weight: 400;
+    left: 50%;
+    line-height: 18px;
+    opacity: 0;
+    padding: 4px 8px;
+    position: absolute;
+    text-transform: lowercase;
+    top: 0;
+    transform: translateX(-50%);
+    transition: all 0.3s;
+
+    &--active {
+      top: -30px;
+
+      opacity: 1;
+
+      transition: all 0.3s;
+    }
+  }
+
+  &:hover {
+    background-color: black;
+    color: white;
+  }
+}

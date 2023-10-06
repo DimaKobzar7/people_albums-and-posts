@@ -1,0 +1,77 @@
+@import "../../styles/mixins";
+
+.user {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  border-radius: 30px;
+  padding: 20px;
+  transition: transform 0.3s;
+  background: linear-gradient(
+    90deg,
+    rgba(131, 58, 180, 1) 0%,
+    rgba(253, 29, 29, 1) 50%,
+    rgba(252, 176, 69, 1) 100%
+  );
+
+  &:last-child {
+    margin-bottom: 24px;
+  }
+
+  @include tablet {
+    padding: 16px;
+  }
+
+  @include small-mobile {
+    flex-direction: column;
+  }
+
+  &:hover {
+    transform: scale(105%);
+  }
+  &__name {
+    font-size: 25px;
+    color: white;
+
+    @include laptop {
+      font-size: 20px;
+    }
+
+    @include small-mobile {
+      margin-bottom: 8px;
+    }
+  }
+
+  &__wrap {
+    display: flex;
+    gap: 16px;
+  }
+
+  &__button {
+    appearance: none;
+    border: none;
+    background: none;
+
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  }
+
+  &__link {
+    display: flex;
+    justify-content: center;
+
+    padding: 8px;
+    width: 130px;
+    text-decoration: none;
+    font-size: 16px;
+    color: black;
+    background-color: white;
+    border-radius: 20px;
+    transition: background-color 0.3s, color 0.3s;
+
+    &:hover {
+      background-color: black;
+      color: white;
+    }
+  }
+}
